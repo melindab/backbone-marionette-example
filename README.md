@@ -1,6 +1,6 @@
 # Example Backbone/Marionette App with Browserify
 
-> This example demonstrates how to build an application using Backbone, Marionette, and Browserify.
+This example demonstrates how to build an application using Backbone, Marionette, and Browserify.
 
 ## Table of Contents
 
@@ -17,9 +17,10 @@
 
 ### Installing Dependencies
 
-npm install backbone --save
+```npm install backbone --save
 npm install backbone.marionette --save
 npm install materialize-css --save
 npm install handlebars --save
 npm install hbsfy --save-dev
 npm install -g browserfiy
+```

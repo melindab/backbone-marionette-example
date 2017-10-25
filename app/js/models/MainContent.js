@@ -1,7 +1,6 @@
 var Backbone = require('backbone');
 
-// Model is a Backbone object. Make sure you
-// type Backbone.Model and not Marionette.Model.
+// Model is a Backbone object, not Marionette.
 module.exports = Backbone.Model.extend({
     // The url property is a built-in Backbone attribute.
     // Set the location of the resource here (in this case,
@@ -9,8 +8,18 @@ module.exports = Backbone.Model.extend({
     // the url from your account.
     url: 'http://demo#######.mockable.io/content',
 
+    // Setting defaults sets these attributes on the model.
+    // The content object fetched from the url above will
+    // also be added to the model if it is successful.
     defaults: {
+        // Because initial navigation occurs before the
+        // content is fetched, we store the string indicating
+        // the route as the value of activePage. Then, once
+        // the content is fetched, activeContent is determined
+        // during rendering.
         activePage: null,
+        // activeContent is the content that mainTemplate
+        // will display in place of {{{ activeContent }}}.
         activeContent: function() {
             // Check that activatePage is set so we don't show
             // an error before the call has succeeded or failed.
@@ -29,6 +38,8 @@ module.exports = Backbone.Model.extend({
     },
 
     setActiveContent: function(page) {
+        // activePage is set whenever there is navigation.
+        // This is called in MainView.
         this.set('activePage', page);
     }
 });

@@ -19,7 +19,6 @@ module.exports = Marionette.View.extend({
     initialize: function() {
         var that = this;
 
-        // this.showContent( 'page-1' );
         this.channel.on('navigate', function(page) {
             that.model.setActiveContent(page);
             that.render();

@@ -46,9 +46,5 @@ module.exports = Marionette.View.extend({
             .always(function() {
                 that.render();
             });
-    },
-
-    onRender() {
-        console.log('rendered');
     }
 });

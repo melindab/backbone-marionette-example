@@ -11,7 +11,7 @@ module.exports = Marionette.View.extend({
     // template file should be used for the view.
     template: appTemplate,
 
-    // The regions property is a built-in Marionette property that declares which
+    // The regions property is a built-in Marionette attribute that declares which
     // elements will hold the various regions on the page.
     regions: {
         headerRegion: '#header-region',

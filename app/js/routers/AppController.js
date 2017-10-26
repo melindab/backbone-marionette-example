@@ -13,12 +13,14 @@ module.exports = Marionette.Object.extend({
     // If a user navigates to the base url of the site,
     // page 1 will be shown.
     showDefault: function() {
+        // Trigger a navigate event and pass 'page-1' as an argument.
         this.channel.trigger('navigate', 'page-1');
     },
 
     // The router passes the route to showPage, which triggers
     // the navigation event.
     showPage: function( page ) {
+        // Trigger a navigate event and pass the route as an argument.
         this.channel.trigger('navigate', page);
     }
 });

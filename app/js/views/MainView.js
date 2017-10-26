@@ -29,20 +29,26 @@ module.exports = Marionette.View.extend({
             // content is retrieved, so the value is stored
             // to be looked up after the fetch finishes.
             that.model.setActiveContent(page);
-            // Render the view.
-            that.render();
+            // Render the view if content has been fetched.
+            if (that.model.get('content')) {
+                that.render();
+            }
         });
 
         // The fetch method is built into Backbone models.
         // A successful call will populate the model.
         // The Backbone fetch method returns a promise
         // so it can be chained with done(), fail(), etc.
-        // Since the view needs to be rendered whether
-        // or not the call fails, always() is used here.
-        // (Error handling is being done in the model.)
         this.model.fetch()
+            .fail(function() {
+                that.model.setActiveContent('error');
+            })
             .always(function() {
                 that.render();
             });
+    },
+
+    onRender() {
+        console.log('rendered');
     }
 });

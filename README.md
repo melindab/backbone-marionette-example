@@ -24,3 +24,15 @@ npm install handlebars --save
 npm install hbsfy --save-dev
 npm install -g browserfiy
 ```
+### Mock Data
+This example code uses mockable.io to create a mock service.
+The format of the mock data should be:
+
+```{
+    "content": {
+        "page-1": "<h2>Page 1 Heading</h2><div>This is page 1 content.</div>",
+        "page-2": "<h2>Page 2 Heading</h2><div>This is page 2 content.</div>",
+        "page-3": "<h2>Page 3 Heading</h2><div>This is page 3 content.</div>"
+    }
+}
+```

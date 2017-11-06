@@ -19,9 +19,9 @@ module.exports = Marionette.View.extend({
     },
 
     // The onRender method is a Marionette event callback that is called after the
-    // view has rendered. We want to wait until the parent is rendered before we
-    // render the child views. In the region we specified above as headerRegion,
-    // we will render a new HeaderView instance (and so on for the other two regions).
+    // view has rendered. The parent should be rendered before rendering the child
+    // views. In the region specified above as headerRegion, a new HeaderView
+    // instance will be rendered (and so on for the other two regions).
     onRender: function() {
         this.showChildView('headerRegion', new HeaderView());
         this.showChildView('mainRegion', new MainView());

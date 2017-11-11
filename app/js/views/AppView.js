@@ -1,18 +1,22 @@
 var Marionette = require('backbone.marionette');
+// This template will describe the DOM structure of the parent view.
 var appTemplate = require('../../templates/appTemplate.hbs');
+// HeaderView and MainView will be child views.
 var HeaderView = require('./HeaderView');
 var MainView = require('./MainView');
 
 module.exports = Marionette.View.extend({
-    // The el property is a built-in Backbone attribute that scopes the module.
+    // The el property is a built-in Backbone attribute that defines which
+    // element is the parent element of the view's html. If it is not defined,
+    // the parent element will be a div.
     el: '#app',
 
-    // The template property is a built-in Backbone attribute that states which
-    // template file should be used for the view.
+    // The template property is a built-in Backbone attribute that allows a template
+    // function or file to be used to create the structure of the page.
     template: appTemplate,
 
     // The regions property is a built-in Marionette attribute that declares which
-    // elements will hold the various regions on the page.
+    // elements will hold the various sub-views on the page.
     regions: {
         headerRegion: '#header-region',
         mainRegion: '#main-region'

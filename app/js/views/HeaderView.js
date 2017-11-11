@@ -20,8 +20,8 @@ module.exports = Marionette.View.extend({
     onRender: function() {
         this.showChildView('navItemsRegion', new NavItemsView());
         // The getUI method is built into Marionette. It gets the element
-        // specified as "menuButton" in the ui hash in the same way you would
-        // access it with jQuery using $('.button-collapse'). The sideNav
+        // specified as "menuButton" in the ui hash in the same way it could
+        // be accessed with jQuery using $('.button-collapse'). The sideNav
         // function is part of Materialize. It will turn the element into a
         // slide-out menu.
         this.getUI('menuButton').sideNav();

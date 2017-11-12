@@ -5,6 +5,8 @@ var appTemplate = require('../../templates/appTemplate.hbs');
 var HeaderView = require('./HeaderView');
 var MainView = require('./MainView');
 
+// Marionette.View is built upon Backbone.View.
+// It describe how data will be displayed.
 module.exports = Marionette.View.extend({
     // The el property is a built-in Backbone attribute that defines which
     // element is the parent element of the view's html. If it is not defined,

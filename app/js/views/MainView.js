@@ -9,8 +9,8 @@ module.exports = Marionette.View.extend({
 
     template: mainTemplate,
 
-    // The model property is a built-in Backbone attribute.
-    // Initialize the MainContent model.
+    // The model property is a built-in Backbone attribute
+    // that defines the model that contains the view's data.
     model: new MainContent(),
 
     // Backbone Radio lets different modules communicate

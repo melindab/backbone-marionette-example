@@ -7,6 +7,7 @@ var Marionette = require('backbone.marionette');
 // Require AppView.js so that the view can be instantiated
 // and shown in the onStart method below.
 var AppView = require('./views/AppView');
+// Require AppRouter so that the router can be instantiated.
 var AppRouter = require('./routers/AppRouter');
 
 // Extend the built-in Marionette Application Object.
@@ -15,9 +16,11 @@ var App = Marionette.Application.extend({
     // that inserts the app view in the specified element. Note
     // that this is called "region" (singular) in the Application
     // object, but is called "regions" (plural) in views.
-
     region: '#app',
 
+    // The router property is a built-in Marionette attribute
+    // that defines the router used to trigger content change
+    // when a user navigates.
     router: new AppRouter(),
 
     // The onStart method is a built-in event callback that is part of
@@ -28,6 +31,7 @@ var App = Marionette.Application.extend({
     onStart: function() {
         // showView() is a built-in Marionette 3 method that shows a view.
         this.showView(new AppView());
+        // Tell the router to start listening for navigation.
         Backbone.history.start();
     }
 });

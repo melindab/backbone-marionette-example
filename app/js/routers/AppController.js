@@ -17,9 +17,9 @@ module.exports = Marionette.Object.extend({
         this.channel.trigger('navigate', 'page-1');
     },
 
-    // The router passes the route to showPage, which triggers
+    // The router passes the route to showPage, which then triggers
     // the navigation event.
-    showPage: function( page ) {
+    showPage: function(page) {
         // Trigger a navigate event and pass the route as an argument.
         this.channel.trigger('navigate', page);
     }

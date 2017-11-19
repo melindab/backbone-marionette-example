@@ -8,11 +8,13 @@ module.exports = Backbone.Model.extend({
     // url with the url from your account.
     url: 'http://demo#######.mockable.io/content',
 
-    // Setting defaults sets default attributes on the model.
-    // The key/value pairs in the fetched JSON fetched from the
-    // url above will also be added as attributes to the model
-    // if the call is successful. If an attribute in the JSON
-    // has the same name as a default, it will overwrite it.
+    // The defaults property is a built-in Backbone attribute.
+    // Setting defaults sets default attributes on the model
+    // in a property aptly named "attributes." The key/value
+    // pairs in the JSON fetched from the url above will also
+    // be added as attributes to the model if the call is
+    // successful. If an attribute in the JSON has the same
+    // name as a default, it will overwrite it.
     defaults: {
         // Because initial navigation occurs before the content
         // is fetched, the string indicating the route is stored
@@ -34,12 +36,13 @@ module.exports = Backbone.Model.extend({
                 return this.error;
             }
         },
+
         error: '<h2>Error</h2><div>This is error content.</div>'
     },
 
     setActiveContent: function(page) {
-        // activePage is set whenever there is navigation.
-        // This is called in MainView.
+        // activePage is a custom method that is set whenever
+        // there is navigation. This is called in MainView.
         this.set('activePage', page);
     }
 });

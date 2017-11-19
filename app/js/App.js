@@ -18,9 +18,8 @@ var App = Marionette.Application.extend({
     // object, but is called "regions" (plural) in views.
     region: '#app',
 
-    // The router property is a built-in Marionette attribute
-    // that defines the router used to trigger content change
-    // when a user navigates.
+    // Defines the router used to trigger content change when a
+    // user navigates.
     router: new AppRouter(),
 
     // The onStart method is a built-in event callback that is part of
